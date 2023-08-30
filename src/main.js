@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const Classes_1 = require("./models/Classes");
 const CharacterUtils_1 = require("./utils/CharacterUtils");
-const charTim = (0, CharacterUtils_1.createCharacter)('Tim', 'Alpine');
-const charJane = (0, CharacterUtils_1.createCharacter)('Jane', 'Rock');
+const charTim = (0, CharacterUtils_1.createCharacter)('Tim', Classes_1.ClimbingClass.Alpine);
+const charJane = (0, CharacterUtils_1.createCharacter)('Jane', Classes_1.ClimbingClass.Rock);
+const charArgon = (0, CharacterUtils_1.createCharacter)('Argon', Classes_1.ClimbingClass.Urban);
 console.log('charTim', charTim);
 console.log('charJane', charJane);
+console.log('charArgon', charArgon);

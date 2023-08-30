@@ -2,7 +2,7 @@ import { Character } from '../models/Character';
 import { initialInventory } from '../models/Inventory';
 import { ClimbingClass, applyAlpineClass, applyRockClass, applyUrbanClass  } from '../models/Classes';
 
-export function createCharacter(name: string, classType: string): Character {
+export function createCharacter(name: string, classType: ClimbingClass): Character {
     const baseCharacter: Character  = {
         name,
         class: classType,
