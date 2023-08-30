@@ -5,6 +5,7 @@ export function createCharacter(name: string, classType: string): Character {
     return {
         name,
         class: classType,
+        weapon: "hands",
         hp: 10,
         attack: 10,
         defense: 10,
