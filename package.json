@@ -1,0 +1,7 @@
+{
+    "name": "Climber-RPG",
+    "version": "1.0.0",
+    "devDependencies": {
+        "jest": "^29.6.4"
+    }
+}
