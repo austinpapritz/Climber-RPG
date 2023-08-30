@@ -1,0 +1,1 @@
+const initialInventory = ['harness', '8 carabiners', '30m rope', '4 slings'];
