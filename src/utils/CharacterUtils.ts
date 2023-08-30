@@ -1,8 +1,9 @@
 import { Character } from '../models/Character';
 import { initialInventory } from '../models/Inventory';
+import { ClimbingClass, applyAlpineClass, applyRockClass, applyUrbanClass  } from '../models/Classes';
 
 export function createCharacter(name: string, classType: string): Character {
-    return {
+    const baseCharacter: Character  = {
         name,
         class: classType,
         weapon: "hands",
@@ -13,4 +14,16 @@ export function createCharacter(name: string, classType: string): Character {
         dexterity: 10,
         inventory: [...initialInventory],
     };
+
+    switch (classType) {
+        case ClimbingClass.Alpine:
+            return applyAlpineClass(baseCharacter);
+        case ClimbingClass.Rock:
+            return applyRockClass(baseCharacter);
+        case ClimbingClass.Urban:
+            return applyUrbanClass(baseCharacter);
+        default: 
+            return baseCharacter;    
+    }
 }
+
