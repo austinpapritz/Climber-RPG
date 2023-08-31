@@ -1,5 +1,5 @@
-import { Character } from "./Character"
-import { initialInventory } from "./Inventory"
+import { Character } from './Character'
+import { initialInventory } from './Inventory'
 
 export enum ClimbingClass {
     Alpine = 'Alpine',
@@ -10,25 +10,25 @@ export enum ClimbingClass {
   export function applyAlpineClass(character: Character): Character {
     return {
       ...character,
-      weapon: "dual axes",
+      weapon: 'dual axes',
       hp: 8,
       attack: 7,
       defense: 14,
       speed: 15,
       dexterity: 7,
-      inventory: [...initialInventory, "ultralight boots", "helmet"]
+      inventory: [...initialInventory, 'ultralight boots', 'helmet']
     }
   }
 
   export function applyRockClass(character: Character): Character {
     return {
       ...character,
-      weapon: "quick draw",
+      weapon: 'quick draw',
       hp: 12,
       attack: 14,
       defense: 6,
       speed: 8,
-      inventory: [...initialInventory, "climbing shoes", "sunglasses"]
+      inventory: [...initialInventory, 'climbing shoes', 'sunglasses']
     }
   }
 
@@ -38,6 +38,6 @@ export enum ClimbingClass {
       attack: 11,
       defense: 7,
       speed: 12,
-      inventory: [...initialInventory, "running shoes", "hat"]
+      inventory: [...initialInventory, 'running shoes', 'hat']
     }
   }

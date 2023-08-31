@@ -5,8 +5,8 @@ import { ClimbingClass, applyAlpineClass, applyRockClass, applyUrbanClass  } fro
 export function createBaseCharacter(name: string): Character {
     const baseCharacter: Character = {
         name,
-        class: "none",
-        weapon: "hands",
+        class: 'none',
+        weapon: 'hands',
         hp: 10,
         attack: 10,
         defense: 10,
