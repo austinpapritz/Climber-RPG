@@ -2,10 +2,10 @@ import { Character } from '../models/Character';
 import { initialInventory } from '../models/Inventory';
 import { ClimbingClass, applyAlpineClass, applyRockClass, applyUrbanClass  } from '../models/Classes';
 
-export function createCharacter(name: string, classType: ClimbingClass): Character {
-    const baseCharacter: Character  = {
+export function createBaseCharacter(name: string): Character {
+    const baseCharacter: Character = {
         name,
-        class: classType,
+        class: "none",
         weapon: "hands",
         hp: 10,
         attack: 10,
@@ -15,15 +15,20 @@ export function createCharacter(name: string, classType: ClimbingClass): Charact
         inventory: [...initialInventory],
     };
 
-    switch (classType) {
-        case ClimbingClass.Alpine:
-            return applyAlpineClass(baseCharacter);
-        case ClimbingClass.Rock:
-            return applyRockClass(baseCharacter);
-        case ClimbingClass.Urban:
-            return applyUrbanClass(baseCharacter);
-        default: 
-            return baseCharacter;    
-    }
+    return baseCharacter;
 }
 
+export function characterClassFactory(baseCharacter: Character) {
+    return (characterClass: ClimbingClass): Character => {
+        switch (characterClass) {
+            case ClimbingClass.Alpine:
+                return applyAlpineClass(baseCharacter);
+            case ClimbingClass.Rock:
+                return applyRockClass(baseCharacter);
+            case ClimbingClass.Urban:
+                return applyUrbanClass(baseCharacter);
+            default:
+                return baseCharacter;
+        }
+    };
+}
